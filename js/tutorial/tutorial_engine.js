@@ -24,10 +24,11 @@ function createTutorial(context, interpreter, messager, doc) {
 
     var commandObj = commands[0];
     commands = commands.slice(1);
-    
+
     var command = commandObj.code !== undefined ? commandObj.code : commandObj;
     var commandPostFun = commandObj.postFun !== undefined ? commandObj.postFun : G.nothing;
-
+    
+    document.getElementById("commands").innerHTML = "Pressione: " + command;
     var userInputAccepter = userInputAccepterCreator(command);
 
     showInfo("Press " + command + " to show command: " + command);
